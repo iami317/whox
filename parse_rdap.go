@@ -1,4 +1,4 @@
-package whois
+package whox
 
 import (
 	"encoding/json"
