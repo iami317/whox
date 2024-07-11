@@ -1,7 +1,7 @@
 package main
 
 import (
-	"github.com/iami317/whois"
+	"github.com/iami317/whox"
 	"github.com/k0kubun/pp/v3"
 )
 

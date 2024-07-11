@@ -1,4 +1,4 @@
-module github.com/iami317/whois
+module github.com/iami317/whox
 
 go 1.22.0
 
