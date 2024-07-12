@@ -9,7 +9,7 @@ type Result struct {
 }
 
 func main() {
-	domain, asnInfo, cert := whois.Run("github.com")
+	domain, asnInfo, cert := whox.Run("github.com")
 	pp.Println(domain)
 	pp.Println(asnInfo)
 	pp.Println(cert)
