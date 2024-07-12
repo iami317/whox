@@ -5,9 +5,6 @@ import (
 	"github.com/k0kubun/pp/v3"
 )
 
-type Result struct {
-}
-
 func main() {
 	domain, asnInfo, cert := whox.Run("github.com")
 	pp.Println(domain)
