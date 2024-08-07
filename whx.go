@@ -19,11 +19,11 @@ func Run(resource string) (domain DomainInfo, asnInfo IP, cert Cert) {
 		domain, err = queryDomain(resource)
 		ips, err := net.LookupHost(resource)
 		if err != nil {
-			logx.Verbosef("获取域名(%v)的 ip 地址失败：%v", resource, err)
+			logx.Errorf("获取域名(%v)的 ip 地址失败：%v", resource, err)
 		}
 		if len(ips) > 0 {
-			logx.Verbosef("获取到 域名(%v)的 ip 地址：%v", resource, ips)
-			ipStr = ips[0]
+			logx.Infof("获取到 域名(%v)的 ip 地址：%v", resource, ips)
+			domain.DomainIp = ips[0]
 		}
 		//queryIcp(domain.DomainName)
 	}

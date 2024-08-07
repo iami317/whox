@@ -19,6 +19,7 @@ require (
 	github.com/kataras/golog v0.1.12 // indirect
 	github.com/kataras/pio v0.0.13 // indirect
 	github.com/kr/text v0.2.0 // indirect
+	github.com/lionsoul2014/ip2region/binding/golang v0.0.0-20240510055607-89e20ab7b6c6 // indirect
 	github.com/malfunkt/iprange v0.9.0 // indirect
 	github.com/mattn/go-colorable v0.1.13 // indirect
 	github.com/mattn/go-isatty v0.0.20 // indirect
