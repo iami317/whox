@@ -21,6 +21,7 @@ type DomainInfo struct {
 	WhoisServer        string   `json:"whois_server,omitempty" #:"whois 服务器地址"`
 	DomainName         string   `json:"domain_name,omitempty" #:"域名"`
 	DomainIp           string   `json:"domain_ip,omitempty" #:"域名的解析ip"`
+	Region             string   `json:"region,omitempty" #:"地理位置"`
 	Registrant         string   `json:"registrant,omitempty" #:"域名注册方"`
 	Registrar          string   `json:"registrar,omitempty" #:"域名注册商"`
 	RegistrarEmail     string   `json:"registrar_email,omitempty" #:"注册邮箱"`

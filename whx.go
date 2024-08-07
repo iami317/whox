@@ -12,8 +12,7 @@ import (
 	"strings"
 )
 
-func Run(resource string) (domain DomainInfo, asnInfo IP, cert Cert) {
-	var ipStr string
+func Run(resource string) (domain DomainInfo, asnInfo IP, cert Cert, icp Laf) {
 	var err error
 	if hubur.IsDomain(resource) {
 		domain, err = queryDomain(resource)
@@ -24,19 +23,21 @@ func Run(resource string) (domain DomainInfo, asnInfo IP, cert Cert) {
 		if len(ips) > 0 {
 			logx.Infof("获取到 域名(%v)的 ip 地址：%v", resource, ips)
 			domain.DomainIp = ips[0]
+			domain.Region = queryRegion(ips[0])
 		}
-		//queryIcp(domain.DomainName)
+		icp = queryIcpN(domain.DomainName)
 	}
 
-	if len(ipStr) > 0 {
-		asnInfo, err = LookupIP(ipStr)
+	if len(domain.DomainIp) > 0 {
+		asnInfo, err = LookupIP(domain.DomainIp)
 		if err != nil {
 			logx.Error(err)
 		}
-		cert = queryCert(ipStr)
+		cert = queryCert(domain.DomainIp)
 	}
-	return domain, asnInfo, cert
+	return domain, asnInfo, cert, icp
 }
+
 func queryCert(ipStr string) Cert {
 	cert := NewCert(ipStr)
 	return Cert{
