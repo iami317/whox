@@ -73,7 +73,7 @@ func ParseWhoisResponseCN(response string, domain string) (DomainInfo, error) {
 
 	// 解析注册域名
 	matchRegistrarEmail := reRegistrarEmail.FindStringSubmatch(response)
-	if len(matchRegistrar) > 1 {
+	if len(matchRegistrarEmail) > 1 {
 		domainInfo.RegistrarEmail = matchRegistrarEmail[1]
 	}
 
